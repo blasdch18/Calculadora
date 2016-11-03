@@ -19,7 +19,7 @@ public class CalculadoraApplication {
 	@ResponseBody
 	String calc(@RequestParam String a , @RequestParam String b , @RequestParam String op)
 	{
-		Integer calc1=0;
+		Integer calc1=null;
 		Integer a1 = Integer.valueOf(a);
 		Integer b1 = Integer.valueOf(b);
 		//System.out.print("El resultado es : ");
@@ -27,12 +27,16 @@ public class CalculadoraApplication {
 		{
 			case "+":
 				calc1=a1+b1;
+				break;
 			case "-":
 				calc1=a1-b1;
+				break;
 			case "*":
 				calc1=a1*b1;
+				break;
 			case "/":
 				calc1=a1/b1;
+				break;
 		}
 		String resultado=String.valueOf(calc1);
 		return resultado;
